@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <style>
+      #main{
+        width:100%;
+        /* border: 1px solid black; */
+      }
+      #main>div{
+        width: 100%;
+        /* border: 1px solid black; */
+        margin-left: 170px;
+      }
+      img{
+        margin-left:200px ;
+      }
+      p{
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--DO NOT CHANGE THIS ID's-->
+
+    <div id="container">
+      <div id="sidebar">
+        <!--add your sidebar component here-->
+      </div>
+
+      <div id="main">
+        <!--DO NOT CHANGE THIS ID's-->
+        <!--Show the clicked article in detailed format here ONLY-->
+      </div>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import sidebar from './components/sidebar.js'
+  let navbar=document.getElementById("sidebar");
+  navbar.innerHTML=sidebar();
+
+  let input=document.getElementById("searchbar");
+input.addEventListener("keypress",(e)=>{
+  if(e.key=="Enter"){
+   let input_value=document.getElementById("searchbar").value;
+   localStorage.setItem("search_term",JSON.stringify(input_value));
+   window.location.href="search.html";
+
+  }
+})
+
+
+
+let data=JSON.parse(localStorage.getItem("article"));
+let main=document.getElementById("main");
+  function append(data){
+    data.forEach(ele => {
+      main.textContent="";
+      let div=document.createElement("div");
+      let author=document.createElement("p");
+      let title=document.createElement("p");
+      let dis=document.createElement("p");
+       let image=document.createElement("img");
+      let content=document.createElement("p");
+      let publish=document.createElement("p");
+
+       image.src=ele.urlToImage;
+       author.innerHTML=`Author:     ${ele.author} `;
+       title.innerHTML=`Title:     ${ele.title}`;
+       dis.innerHTML=`Discription:      ${ele.description} `
+       content.innerHTML=`Content:      ${ele.content} `;
+       publish.innerHTML=`Published Date:      ${ele.publishedAt} `
+       div.append(image,title,author,content,dis,publish);
+main.append(div);
+
+
+
+
+    });
+
+  }
+  append(data);
+</script>
+
+
+
+
+
+<!-- author: null
+​​
+content: "Life Insurance Corporation of India's initial public offering (IPO) is expected to file its Draft Red Herring Prospectus (DRHP) on February 11, sources told CNBC-TV18.\r\nIt has learned that the Insura… [+914 chars]"
+​​
+description: "LIC IPO: The quantum of divestment and EV numbers will be mentioned in the DRHP."
+​​
+publishedAt: "2022-02-11T01:27:00Z"
+​​
+source: Object { id: null, name: "Moneycontrol" }
+​​
+title: "LIC Public Issue | Filing with SEBI likely today, IRDAI clears draft papers - Moneycontrol.com"
+​​
+url: "https://www.moneycontrol.com/news/business/ipo/lic-ipo-filin…likely-on-february-11-irdai-clears-draft-papers-8070891.html"
+​​
+urlToImage: "https://images.moneycontrol.com/static-mcnews/2022/02/LIC-BUilding-770x433.jpg" -->
+
+
+
+
