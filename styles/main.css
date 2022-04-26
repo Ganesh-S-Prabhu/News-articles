@@ -3,8 +3,9 @@
   height: 80px;
   display: flex;
   justify-content: space-around;
-  border-bottom: 1px solid black;
+  border-bottom: 5px solid white;
   padding: 20px;
+  padding-bottom: 50px;
 }
 #log {
   width: 25%;
@@ -19,9 +20,9 @@ input {
   width: 250px;
   height: 40px;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 24px;
   border-radius: 20px;
-  padding: 7px;
+  padding: 15px;
 }
 #main {
   margin-top: 50px;
@@ -29,6 +30,29 @@ input {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
 }
-#log > div {
+#main>div{
+  padding: 5px;
+}
+#log > * {
   cursor: pointer;
 }
+.home{
+  height: 50px;
+  width: 60px;
+}
+#home{
+  margin-left:-250px;
+  margin-top: 10px;
+  color:white
+}
+
+body{
+  background-color: rgba(0, 0, 0, 0.897);
+  color:white;
+}
+p{
+  color: white;
+}
+
+
+
