@@ -4,6 +4,8 @@ This project is a dummy project to see the news articles. Here you can also see 
 
 For this project i used the API : https://shrouded-earth-23381.herokuapp.com/api/headlines/india
 
+[Deployed link](https://soft-crisp-b1d6d3.netlify.app/)
+
 
 
 ## Tech Stack:
@@ -22,12 +24,12 @@ For this project i used the API : https://shrouded-earth-23381.herokuapp.com/api
 4. Payment gateway Integration 
 
 ## Try it out locally
-This is a simple project. You can use any server to serve up the html pages. Once the server is runnning just go to the localhost link the server provides.
+This is a simple project. You can use the above deployed link to see the project
 
 <h1>Snapshots of our project</h1>
 
 
-This is the Landing Page of this Project
+
 ![news-article landing page](https://user-images.githubusercontent.com/93926085/165442684-595791ce-67e5-4e96-8691-fc44195cdb70.png)
 
 
